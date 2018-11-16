@@ -1,0 +1,18 @@
+logging:
+  level: info
+spring:
+  redis:
+    #database: 0
+    #host: 192.168.8.248
+    #port: 6379
+    cluster:
+      nodes: 172.16.239.81:6379,172.16.239.81:6380,172.16.239.81:6381,172.16.239.81:9382,172.16.239.81:6383,172.16.239.81:6384
+    expireSeconds: 120
+    commandTimeout: 10000  #redis操作的超时时间
+    pool:
+      maxActive: 5000 #最大连接数
+      maxIdle: 30 #最大空闲连接数
+      minIdle: 5 #最小空闲连接数
+      maxWait: 3000
+server:
+  port: 8765
